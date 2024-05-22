@@ -1,0 +1,69 @@
+### Get All Adopters
+GET localhost:8080/api/v1/adopter
+
+
+### Get Valid Adopter ID
+GET localhost:8080/api/v1/adopter/id=1
+
+### Get InValid Adopter ID
+GET localhost:8080/api/v1/adopter/id=100
+
+### Create New Adopter
+POST localhost:8080/api/v1/adopter
+Content-Type: application/json
+
+{
+  "id": null,
+  "name": "Barnie Rubble",
+  "phoneNumber": "111-111-1111",
+  "email": "barnie.rubble@email.com",
+  "isOver18": true,
+  "dateCreated": "2024-04-18T19:57:59.5987663",
+  "dateModified": null,
+  "adopterAnimals": null
+}
+###
+
+### Update existing Adopter
+#POST localhost:8080/adopter?name=Fred Rubble&phoneNumber=123-456-7890&email=fred.rubble@email.com
+PUT localhost:8080/api/v1/adopter/id=6
+Content-Type: application/json
+
+{
+  "id": 6,
+  "name": "Barnie Rubble",
+  "phoneNumber": "222-222-2222",
+  "email": "barnie.rubble@email.com",
+  "isOver18": true,
+  "dateCreated": "2024-04-18T19:57:59.5987663",
+  "dateModified": "2024-04-18T19:57:59.5987663",
+  "adopterAnimals": null
+}
+###
+
+### Update Adopter with invalid ID
+#POST localhost:8080/adopter?name=Fred Rubble&phoneNumber=123-456-7890&email=fred.rubble@email.com
+PUT localhost:8080/api/v1/adopter/id=600
+Content-Type: application/json
+
+{
+  "id": 600,
+  "name": "Barnie Rubble",
+  "phoneNumber": "222-222-2222",
+  "email": "barnie.rubble@email.com",
+  "isOver18": true,
+  "dateCreated": "2024-04-18T19:57:59.5987663",
+  "dateModified": "2024-04-18T19:57:59.5987663",
+  "adopterAnimals": null
+}
+###
+
+
+
+### Delete Valid ID
+DELETE localhost:8080/api/v1/adopter/id=1
+###
+
+### Delete Invalid ID
+DELETE localhost:8080/api/v1/adopter/id=100
+###
